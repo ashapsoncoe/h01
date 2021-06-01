@@ -1,6 +1,5 @@
 import networkx as nx
 import igraph as ig
-import numpy as np
 from scipy.spatial.distance import cdist, euclidean
 from zipfile import ZipFile
 import os
@@ -33,8 +32,7 @@ from itertools import combinations
 from collections import Counter
 from random import choice
 import gc
-
-
+import math
 
 
 class ParallelLocationRequester:
@@ -944,86 +942,58 @@ def make_skel_graphs_batch(i, segs_to_load, skel_dir, skel_voxel_size, credentia
 
     return skel_graphs
 
-def fix_layer_mem(upper_bounds, lower_bounds, all_point_data):
-    
-    bounds = []
+def compute_y(circle, x):
+
+    # (x - xc)^2 + (y - yc)^2 = r^2
+    # y = yc + sqrt(r^2 - (x - xc)^2)
+
+    radius = circle["radius"]
+    xc, yc = circle["center"]
+
+    return  -1 * np.sqrt(-1 * np.square((x - xc))  + radius**2) + yc
+
+def right_of_circle(circle,x):
+
+    radius = circle["radius"]
+    xc, yc = circle["center"]
+
+    return x > radius + xc
+
+
+def fix_layer_mem(bounds, all_point_data):
+
     cortical_layers={}
     cortical_layers_coords={}
 
-    # create helper data structs 
-    for i in range(len(upper_bounds)):
-
-        bounds.append(upper_bounds[i])
-        bounds.append(lower_bounds[i])
-
-    upper_edge = (500, 2400), (3500, 2100)
-    lower_edge = (500, 1400), (1900, 650)
-    
-    # corners of bounding lines
-    a = np.array(upper_edge[0])
-    b = np.array(upper_edge[1])
-
-    c = np.array(lower_edge[0])
-    d = np.array(lower_edge[1])
-
     # use broadcasting to scale x and y coord data
     seg_ids = all_point_data[:,0]
+    xy = all_point_data[:,[1,2]] / np.array([1000,1000])
 
-    xy_prelim = all_point_data[:,[1,2]]
-
-    xy = xy_prelim / np.array([1000,1000])
-
-    # get unclassified mask and seg_ids
-    #
-    # pass blacklis_mask through classification to avoid classifying points
-    # more than once
-    #
-    # also note the order that the classification is done, from white matter
-    # through to layer 6. This moves layer by layer in order. Important 
-    # to maintain this order because we are passing the blacklist as we
-    # go, meaning it stops layers 5 and 6 from curving back up 
-    unclass_mask = (np.cross(xy-a, b-a)<0) | (np.cross(xy-c, d-c)>0)
-    blacklist_mask = unclass_mask
-    unclassified_ids = seg_ids[unclass_mask]
-    coords = xy[unclass_mask]
-    cortical_layers["unclassified"] = list(unclassified_ids)
-    cortical_layers_coords["unclassified"] = coords
-    
-    # get white matter layer 
-    mask = np.logical_and(xy[:,1] > bounds[0](xy[:,0]), np.logical_not(blacklist_mask))
+    # get white matter layer
+    mask = xy[:,1] > compute_y(bounds[0], xy[:,0])
     ids = seg_ids[mask]
     coords = xy[mask]
-    blacklist_mask = np.logical_or(blacklist_mask, mask)
     cluster_name = "White matter"
-    cortical_layers[cluster_name] = list(ids) 
+    cortical_layers[cluster_name] = list(ids)
     cortical_layers_coords[cluster_name] = coords
-    
-    # get central layers 
+
+    # get central layers
     for i in range(len(bounds) - 1):
-        mask = np.logical_and(np.logical_and(xy[:,1] < bounds[i](xy[:,0]), xy[:,1] > bounds[i+1](xy[:,0])), \
-                              np.logical_not(blacklist_mask))
-        ids = seg_ids[mask]
+        mask = np.logical_and(np.logical_or(xy[:,1] < compute_y(bounds[i],xy[:,0]), right_of_circle(bounds[i],xy[:,0])), \
+                              xy[:,1] > compute_y(bounds[i+1], xy[:,0]))
         coords = xy[mask]
-        blacklist_mask = np.logical_or(blacklist_mask, mask)
         cluster_name = "Layer " + str(6 - i)
-        cortical_layers[cluster_name] = list(ids) 
+        cortical_layers[cluster_name] = list(ids)
         cortical_layers_coords[cluster_name] = coords
 
-    # get layer 1 
-    # remove elements that should be unclassified  
-    mask = np.logical_and(xy[:,1] < bounds[-1](xy[:,0]), np.logical_not(blacklist_mask))
+    # get layer 1
+    mask = xy[:,1] < compute_y(bounds[-1], xy[:,0])
     ids = seg_ids[mask]
     coords = xy[mask]
     cluster_name = "Layer 1"
-    cortical_layers[cluster_name] = list(ids)   
+    cortical_layers[cluster_name] = list(ids)
     cortical_layers_coords[cluster_name] = coords
-    
-    for k in cortical_layers.keys():
-        cortical_layers[k] = [str(x) for x in cortical_layers[k]]
-    
-    for k in cortical_layers_coords:
-        cortical_layers_coords[k] = [(int(x[0]), int(x[1])) for x in cortical_layers_coords[k]]
-    
+
     return cortical_layers, cortical_layers_coords
 
 def get_info_from_bigquery(info_to_get, info_to_use, info_to_use_ids, db_name, client, batch_size=10000):

@@ -17,17 +17,7 @@ from itertools import repeat, product
 import common_functions as cf
 import pandas as pd
 
-
-'''
-create table if not exists `goog14r0seg1.agg20200916c3_xy_only`
-AS
-SELECT 
-            CAST(id as STRING) AS seg_id, 
-            (bbox.start.x + (bbox.size.x/2))*8 AS x,
-            (bbox.start.y + (bbox.size.y/2))*8 AS y
-            FROM goog14r0seg1.agg20200916c3_objinfo
-            WHERE id IS NOT NULL
-'''
+# coauthors - Alexander Shapson-Coe, Luke Bailey
 
 agglo_seg_dir = '/home/alexshapsoncoe/drive/agg20200916c3_xy_only' # In nm coordinates
 layer_bounds = "./conical_bounds.json"

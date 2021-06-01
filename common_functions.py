@@ -34,6 +34,7 @@ from random import choice
 import gc
 import math
 
+# author - Alexander Shapson-Coe
 
 class ParallelLocationRequester:
 

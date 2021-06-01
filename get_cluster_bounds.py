@@ -26,7 +26,7 @@ from scipy.spatial import ConvexHull, Delaunay
 from scipy import optimize
 from math import pi
 
-# Author - Luke James Bailey
+# Couthors - Luke James Bailey, Alexander Shapson-Coe
 
 # -------------------- #
 # ----GLOBAL VARS----- #
@@ -56,7 +56,7 @@ top_dir = "./"
 cell_data = "./agglo_20201123_cell_data.json"
 
 use_only_neurons = True
-use_z = False  # original code has this set to false
+use_z = False  
 max_minpts = 50
 upper_edge = (500, 2250), (3500, 1800)
 lower_edge = (500, 1600), (2750, 500)

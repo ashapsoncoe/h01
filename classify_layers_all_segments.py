@@ -30,7 +30,7 @@ SELECT
 '''
 
 agglo_seg_dir = '/home/alexshapsoncoe/drive/agg20200916c3_xy_only' # In nm coordinates
-layer_bounds = "/home/alexshapsoncoe/drive/cortical_bounds.pkl"
+layer_bounds = "./conical_bounds.json"
 output_dir = "/home/alexshapsoncoe/drive/agg20200916c3_layer_classifications"
 cpu_num = 15
 fragment_class_info_dir = '/home/alexshapsoncoe/drive/axon_dendrite_astrocyte_cilia_pure_and_majority_agglo_20200916c3/all_classifications.json'
@@ -85,11 +85,7 @@ def do_one_dir(f_name, cell_data, bounds):
     # if id in aglo json, sub x and y values for true_x and true_y
     checked_data = raw_data_to_checked_data(df, cell_data)
 
-    # -----CLASSIFY CELLS USING BOUND SOPS----- #
-    upper_bounds = bounds["upper"]
-    lower_bounds = bounds["lower"]
-
-    shard_layers = cf.fix_layer_mem(upper_bounds, lower_bounds, checked_data)[0]
+    shard_layers = cf.fix_layer_mem(bounds, checked_data)[0]
     
     with open(f'{output_dir}/temp/{f_name}', 'w') as fp:
         json.dump(shard_layers, fp)
@@ -101,8 +97,8 @@ if __name__ == "__main__":
     with open(cell_data_dir, 'r') as fp:
         cell_data = json.load(fp)
 
-    with open(layer_bounds, "rb") as f:
-        bounds = pickle.load(f)
+    with open(layer_bounds, "r") as f:
+        bounds = json.load(f)
         
     if 'temp' not in os.listdir(output_dir):
         os.mkdir(f'{output_dir}/temp')
@@ -175,6 +171,7 @@ if __name__ == "__main__":
         df = pd.DataFrame(all_info_for_df, columns=['agglo_id', 'region', 'type'])
         
         df.to_csv(f'{output_dir}/region_and_type_{f_name}.csv', index=0, header=False)
+
 
 
 

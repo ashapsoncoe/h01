@@ -35,6 +35,7 @@ import gc
 import math
 
 # author - Alexander Shapson-Coe
+# author of ParellelLocationRequester - Tim Blakely
 
 class ParallelLocationRequester:
 

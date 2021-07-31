@@ -867,7 +867,7 @@ def fix_layer_mem(bounds, all_point_data):
     xy = all_point_data[:,[1,2]] / np.array([1000,1000])
 
     # get white matter layer
-    mask = xy[:,1] > compute_y(bounds[0], xy[:,0])
+    mask = np.logical_or(xy[:,1] > compute_y(bounds[0], xy[:,0]), right_of_circle(bounds[0],xy[:,0]))
     ids = seg_ids[mask]
     coords = xy[mask]
     cluster_name = "White matter"
@@ -886,7 +886,7 @@ def fix_layer_mem(bounds, all_point_data):
         cortical_layers_coords[cluster_name] = coords
 
     # get layer 1
-    mask = xy[:,1] < compute_y(bounds[-1], xy[:,0])
+    mask = np.logical_or(xy[:,1] < compute_y(bounds[-1], xy[:,0]), right_of_circle(bounds[-1],xy[:,0]))
     ids = seg_ids[mask]
     coords = xy[mask]
     cluster_name = "Layer 1"
@@ -897,7 +897,6 @@ def fix_layer_mem(bounds, all_point_data):
     all_classified_ids = set([a for b in [cortical_layers[x] for x in cortical_layers] for a in b])
     cortical_layers['unclassified'] = [x[0] for x in all_point_data if x[0] not in all_classified_ids]
     cortical_layers_coords['unclassified'] = [x[1:] for x in all_point_data if x[0] not in all_classified_ids]
-
 
     return cortical_layers, cortical_layers_coords
 

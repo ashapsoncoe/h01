@@ -2,19 +2,20 @@ import json
 import os
 import numpy as np
 from itertools import repeat
-import common_functions as cf
+import common_functions as cf # Please download from https://github.com/ashapsoncoe/h01/blob/main/common_functions.py and place in your site-packages folder 
 import pickle
 from multiprocessing import Pool
 from google.cloud import bigquery             
 from google.oauth2 import service_account
 import igraph as ig
 
-credentials_file = '/home/alexshapsoncoe/drive/alexshapsoncoe.json'
-input_file = '/home/alexshapsoncoe/drive/random_sample_of_500_axons_from_each_gp_stregnth_and_type_agg20200916c3_list.json'
-skel_dir = '/home/alexshapsoncoe/drive/20200916c3_skeletons_6class_plus_myelin/'
-save_dir = '/home/alexshapsoncoe/drive/random_sample_of_500_axons_from_each_gp_stregnth_and_type_agg20200916c3'
-chosen_parameters_file = '/home/alexshapsoncoe/drive/axon_skeleton_pruning_parameters.json'
-synapse_classification_model = '/home/alexshapsoncoe/drive/axon_synapse_classification_model.pkl'
+# Files below available from gs://h01-release/h01-scripts-supplementary-files 
+credentials_file = './alexshapsoncoe.json'
+input_file = './random_sample_of_500_axons_from_each_gp_stregnth_and_type_agg20200916c3_list.json' # List of segment IDs that you wish to process
+skel_dir = './20200916c3_skeletons_6class_plus_myelin/' # Skeleton data for all segments in the segmentation data
+save_dir = './random_sample_of_500_axons_from_each_gp_stregnth_and_type_agg20200916c3' # A directory on your local machine where you would like to save the results
+chosen_parameters_file = './axon_skeleton_pruning_parameters.json'
+synapse_classification_model = './axon_synapse_classification_model.pkl'
 shard_divisor = 42356404
 skel_voxel_size = [32,32,33]
 synapse_voxel_size = [8,8,33]

@@ -17,10 +17,8 @@ import os
 
 
 num_segs_to_sample = 500
-save_dir = 'sampled_points_for_seg_proofreading_june_2022'
 credentials_file = 'alexshapsoncoe.json' # or your credentials file 
 volume_id = '964355253395:h01:goog14r0seg1_agg20200916c3_flat'
-seg_info_db = 'goog14r0seg1.agg20200916c3_regions_types_circ_bounds_no_duplicates'
 max_parallel_requests = 10
 batch_size = 10
 
@@ -77,10 +75,6 @@ if __name__ == '__main__':
 
         all_results.extend(list(zip(retrieved_ids, [(int(a[0]), int(a[1]), int(a[2])) for a in this_chunk])))
 
-
-    if not os.path.exists(save_dir):
-        os.mkdir(save_dir)
-
     seg_saveable = volume_id.replace(':', '_')
 
     seg_ids = list(set([x[0] for x in all_results if x[0] != '0']))
@@ -88,14 +82,12 @@ if __name__ == '__main__':
     seg_ids = seg_ids[:num_segs_to_sample]
 
 
-    with open(f'{save_dir}/{num_segs_to_sample}_segs_sampled_using_random_points_from_{seg_saveable}.json', 'w') as fp:
+    with open(f'{num_segs_to_sample}_segs_sampled_using_random_points_from_{seg_saveable}.json', 'w') as fp:
         json.dump(seg_ids, fp)
 
-    with open(f'{save_dir}/{num_segs_to_sample}_segs_sampled_using_random_points_from_{seg_saveable}_with_points.json', 'w') as fp:
+    with open(f'{num_segs_to_sample}_segs_sampled_using_random_points_from_{seg_saveable}_with_points.json', 'w') as fp:
         json.dump([x for x in all_results if x[0] in set(seg_ids)], fp)
 
-    with open(f'{save_dir}/all_{len(all_results)}_sampled_random_points.json', 'w') as fp:
-        json.dump(all_results, fp)
 
 
 

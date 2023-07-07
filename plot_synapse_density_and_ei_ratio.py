@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import time
 import json
 
-credentials_file = 'alexshapsoncoe.json'
+credentials_file = 'alexshapsoncoe.json' # or your credentials file
 syn_db_name = 'lcht-goog-connectomics.goog14r0s5c3.synapse_c3_eirepredict_clean_dedup' 
 save_dir = 'ei_syn_density_plots'
 layers_file = 'cortical_bounds_circles.json'

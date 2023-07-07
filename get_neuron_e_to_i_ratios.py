@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 
 
-credentials_file = 'alexshapsoncoe.json'
+credentials_file = 'alexshapsoncoe.json' # or your credentials file
 results_file = 'goog14r0s5c3_e_i_ratios_feb_2023.csv'
 syn_db_name = 'lcht-goog-connectomics.goog14r0s5c3.synapse_c3_eirepredict_clean_dedup'
 cell_ids = 'agglo_20200916c3_cell_data.json'

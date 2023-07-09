@@ -12,7 +12,7 @@ from google.oauth2 import service_account
 import pandas as pd
 
 
-proofread_cells_dir = 'proofread104_neurons_20210511' # available from gs://h01_paper_public_files/proofread104_neurons_20210511.zip
+proofread_cells_dir = 'proofread104_neurons_20210511' # needs to be unzipped before running, available from gs://h01_paper_public_files/proofread104_neurons_20210511.zip
 cred_path = 'alexshapsoncoe.json' # or your credentials file 
 output_file_name = 'proofread_neurons_split_and_merge_stats.csv'
 

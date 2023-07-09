@@ -18,7 +18,7 @@ seg_info_db = 'goog14r0seg1.agg20200916c3_regions_types_circ_bounds_20230521'
 skel_sql_table = 'goog14r0seg1.agg20200916c3_subcompartment_skeleton_counts_v1'
 min_num_axon_nodes = 0
 max_stregnth = True
-sep_e_and_i = True
+sep_e_and_i = False
 
 axons_per_type_per_stregnth = 10000
 

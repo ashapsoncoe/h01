@@ -2,7 +2,6 @@ import os
 import sys
 
 working_dir = os.path.dirname(__file__)
-#working_dir = 'D:\\h01_work'
 sys.path.insert(0, working_dir)
 os.chdir(working_dir)
 

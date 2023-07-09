@@ -1,0 +1,45 @@
+,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+N,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0,14,15.0,16.0,17,18,19,20
+Total number axons with GP strength N,60199273.0,757277.0,51891.0,5541.0,1294.0,334.0,122.0,38.0,28.0,9.0,4.0,4.0,0.0,1,0.0,0.0,0,0,1,0
+Number of axons with GP strength N undergoing simulation,4115.0,3343.0,2759.0,1685.0,895.0,250.0,95.0,41.0,16.0,10.0,12.0,5.0,3.0,0,1.0,1.0,0,0,0,0
+Total number of axons with GP strength N per each axon with GP strength N undergoing simulation,14629.22794653706,226.52617409512413,18.807901413555637,3.288427299703264,1.4458100558659217,1.336,1.2842105263157895,0.926829268292683,1.75,0.9,0.3333333333333333,0.8,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 1 forming GP strength N under null model,3890.0,212.0,13.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 2 forming GP strength N under null model,2192.0,990.0,141.0,15.0,5.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 3 forming GP strength N under null model,1338.0,1143.0,230.0,41.0,5.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 4 forming GP strength N under null model,667.0,793.0,176.0,36.0,7.0,6.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 5 forming GP strength N under null model,285.0,447.0,125.0,32.0,3.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 6 forming GP strength N under null model,55.0,133.0,41.0,16.0,2.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 7 forming GP strength N under null model,20.0,57.0,11.0,5.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 8 forming GP strength N under null model,5.0,27.0,7.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 9 forming GP strength N under null model,1.0,11.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 10 forming GP strength N under null model,0.0,4.0,5.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 11 forming GP strength N under null model,0.0,5.0,3.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 12 forming GP strength N under null model,1.0,3.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 13 forming GP strength N under null model,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 14 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 15 forming GP strength N under null model,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 16 forming GP strength N under null model,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 17 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 18 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 19 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Number of axons with true GP strength 20 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 1 forming GP strength N under null model,56907696.71202673,3101396.3246658607,190179.9633049817,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 2 forming GP strength N under null model,496545.37361648964,224260.91235416735,31940.190547412556,3397.892611426862,1132.6308704756207,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 3 forming GP strength N under null model,25164.97209133731,21497.431315694153,4325.817325117783,771.1239579557812,94.03950706777819,18.807901413555637,0.0,18.807901413555637,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 4 forming GP strength N under null model,2193.381008902076,2607.722848664713,578.7632047477728,118.38338278931742,23.01899109792285,19.730563798219585,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 5 forming GP strength N under null model,412.05586592179,646.277094972066,180.72625698324055,46.265921787709495,4.337430167597765,2.8916201117318434,1.4458100558659217,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 6 forming GP strength N under null model,73.47999999999995,177.68800000000036,54.77599999999996,21.375999999999994,2.672,2.672,1.336,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 7 forming GP strength N under null model,25.684210526315784,73.19999999999999,14.126315789473681,6.421052631578947,2.568421052631579,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 8 forming GP strength N under null model,4.634146341463415,25.024390243902438,6.487804878048781,0.926829268292683,0.926829268292683,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 9 forming GP strength N under null model,1.75,19.25,3.5,1.75,1.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 10 forming GP strength N under null model,0.0,3.6,4.5,0.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 11 forming GP strength N under null model,0.0,1.6666666666666665,1.0,0.6666666666666666,0.6666666666666666,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 12 forming GP strength N under null model,0.8,2.4000000000000004,0.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 13 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 14 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 15 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 16 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 17 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 18 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 19 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0
+Projected total number of axons in dataset with true GP strength 20 forming GP strength N under null model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0,0

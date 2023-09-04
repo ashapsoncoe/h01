@@ -392,10 +392,6 @@ if __name__ == '__main__':
         expected_strength_counts_to_plot = [expected_strength_counts[x] for x in range_to_plot]
         expected_strength_counts_to_plot = [x*(total_num_real_axons_in_range/sum(expected_strength_counts_to_plot)) for x in expected_strength_counts_to_plot]
 
-        p_val = scipy.stats.chisquare(real_strength_counts_to_plot, f_exp=expected_strength_counts_to_plot)[1]
-
-        print(f'p = {p_val}')
-
         real_percentages_to_plot = [x/sum(real_strength_counts_to_plot)*100 if x>0 else 0.0000005 for x in real_strength_counts_to_plot]
         expected_percentages_to_plot = [x/sum(expected_strength_counts_to_plot)*100 if x>0 else 0.0000005 for x in expected_strength_counts_to_plot]
 

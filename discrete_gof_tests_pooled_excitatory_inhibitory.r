@@ -27,15 +27,10 @@ for (dtype in names(data_dict)) {
 
     expected_cdf <- stepfun(elements, expected_cum_prop)
 
-    ks_results <- ks.test(observed_instances, expected_cdf, alternative = c("two.sided"), simulate.p.value = TRUE, B=50)
+    ks_results <- ks.test(observed_instances, expected_cdf, alternative = c("two.sided"))
     print(ks_results)
 
 }
 
 
-
-
-
-list('all')
-#cvm_results <- cvm.test(observed_instances, expected_cdf, type = c("W2"), simulate.p.value = FALSE, B=200)
 

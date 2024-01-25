@@ -517,7 +517,7 @@ def main():
 
     for i, cluster in enumerate(clusters):
         
-        alpha = 30
+        alpha = 120
 
         [sop, inlier_cluster] = fit_central_sops_RANSAC(cluster)
         np_cluster = np.array(inlier_cluster)

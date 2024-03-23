@@ -29,7 +29,7 @@ cell_ids = 'agglo_20200916c3_cell_data.json'
 layer_bounds = 'cortical_bounds_circles.json'
 pr_spines_ng_state_file = 'proofread_spines_neuron_30535700448_c3_agglomeration.json'
 pr_cells = False # If false, will use all pyramidal and interneurons from the c3 agglomeration
-pr_cells_input_dir = 'proofread104_neurons_20210511' # Only needed if pr_cells == True
+pr_cells_input_dir = 'proofread104_neurons_20210511' # Only needed if pr_cells == True. Available in zipped form from https://storage.googleapis.com/h01_paper_public_files/proofread104_neurons_20210511.zip
 agglo_db = 'goog14r0seg1.agg20200916c3_resolved_fixed' # Only needed if pr_cells == True
 adjust_syn_fp_an_fn = True
 
